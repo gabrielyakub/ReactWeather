@@ -8,7 +8,10 @@ const React = require('react');
 // });
 
 var Examples = (props) => (
-  <h3>Test!</h3>
+  <div>
+    <h3>Test!</h3>
+    <p>This is for github test</p>
+  </div>
 );
 
 module.exports = Examples;
