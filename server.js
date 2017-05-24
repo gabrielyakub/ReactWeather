@@ -10,10 +10,10 @@ const PORT = process.env.PORT || 3000;
 //express middleware
 app.use(function(req, res, next){
   //request, response, next(buat redirect kalo middlewarenya selesai)
-  if(req.headers['x-forwarded-proto'] === 'http'){
-    next();
-  }else{
+  if(req.headers['x-forwarded-proto'] === 'https'){
     res.redirect('http://'+ req.hostname + req.url);
+  }else{
+    next();
   }
 })
 
