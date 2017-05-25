@@ -11,6 +11,12 @@ const Weather = require('Weather');
 const About = require('About');
 const Examples = require('Examples');
 
+// load foundation
+// css! itu buat nge load css
+// style! itu buat inject cssnya ke style
+require('style!css!foundation-sites/dist/foundation.min.css')
+$(document).foundation();
+
 ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={Main}>

@@ -1,6 +1,24 @@
+var webpack = require('webpack');
+
 
 module.exports = {
-  entry: './app/app.jsx',
+  entry: [
+    // kalo regular script file pke script! sebelum filepathnya
+    'script!jquery/dist/jquery.min.js',
+    'script!foundation-sites/dist/foundation.min.js',
+    './app/app.jsx'
+  ],
+  // ini buat ngasi apa yang harus ada di external script files
+  externals:{
+    jquery: 'jQuery'
+  },
+  plugins: [
+    // ini buat kyk auto require pas nemuin $ ato jQuery
+    new webpack.ProvidePlugin({
+      '$': 'jquery',
+      'jQuery': 'jquery'
+    })
+  ],
   output: {
     path: __dirname,
     filename: './public/bundle.js'
