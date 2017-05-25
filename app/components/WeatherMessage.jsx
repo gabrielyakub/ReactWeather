@@ -16,7 +16,7 @@ const React = require('react');
 // kyk gini juga bisa, langsung di destructure di parameter
 var WeatherMessage = ({temperature, location}) => {
   return (
-    <p> It's {temperature} degree in {location}</p>
+    <h3 className="text-center"> It's {temperature} degree in {location}</h3>
   );
 };
 
