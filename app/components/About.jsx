@@ -13,8 +13,8 @@ const React = require('react');
 var About = function(props){
   return (
     <div>
-      <h3>About</h3>
-      <p>Welcome to about page</p>
+      <h3 className="text-center page-title">About</h3>
+      <p className="text-center">Welcome to about page</p>
     </div>
   );
 };
@@ -27,9 +27,9 @@ var About = function(props){
 //   );
 // };
 
-var About = (props) => (
-  <h3>About Component</h3>
-);
+// var About = (props) => (
+//   <h3>About Component</h3>
+// );
 
 
 module.exports = About;
