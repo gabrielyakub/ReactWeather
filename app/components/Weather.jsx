@@ -15,7 +15,9 @@ var Weather = React.createClass({
 
     this.setState({
       isLoading: true,
-      errorMessage: undefined
+      errorMessage: undefined,
+      location: undefined,
+      temp: undefined
     });
 
     var that = this;
@@ -40,6 +42,15 @@ var Weather = React.createClass({
       isLoading: false,
       errorMessage: undefined
     });
+  },
+  componentWillReceiveProps: function(newProps){
+    var location = newProps.location.query.location;
+    console.log(newProps);
+    if(location && location.length > 0){
+      this.handleSearch(location);
+      window.location.hash = '#/';
+      // biar urlnya jadi localhost:3000/#/
+    }
   },
   render: function(){
     // cara lain, pake fitur es6
@@ -66,6 +77,16 @@ var Weather = React.createClass({
         {renderError()}
       </div>
     );
+  },
+  componentDidMount: function(){
+    // ini ambil query string nya dari url
+    var location = this.props.location.query.location;
+
+    if(location && location.length > 0){
+      this.handleSearch(location);
+      window.location.hash = '#/';
+      // biar urlnya jadi localhost:3000/#/
+    }
   }
 });
 
